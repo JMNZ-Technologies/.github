@@ -1,0 +1,15 @@
+# Thin caller — drop into EACH repo at .github/workflows/gitflow-guard.yml
+# (rolled out fleet-wide by `make standardize-all`, see
+# scripts/fleet-standard-files.yml). Validates every PR's source-branch
+# prefix against what main/development allow, plus Conventional Commits on
+# every commit in the PR range. All logic lives in the shared reusable
+# workflow. See docs/guidelines/GIT-WORKFLOW.md (central docs repo).
+name: gitflow-guard
+
+on:
+  pull_request:
+    branches: [main, development]
+
+jobs:
+  gitflow-guard:
+    uses: JMNZ-Technologies/shared/.github/workflows/gitflow-guard.yml@main
