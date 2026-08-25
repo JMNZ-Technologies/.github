@@ -1,0 +1,3 @@
+# Default owner for everything in this repo. On a free org this cannot be *enforced*
+# (no required reviews), but it documents ownership and auto-requests review on PRs.
+* @aleixjf

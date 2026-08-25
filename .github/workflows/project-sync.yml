@@ -1,0 +1,22 @@
+# Thin caller — drop into EACH repo at .github/workflows/project-sync.yml
+# (rolled out fleet-wide by `make standardize-all`, see
+# scripts/fleet-standard-files.yml). Adds every opened/labeled issue to the
+# cross-repo Project board, syncs its Type/Priority/Area fields from labels,
+# and stamps a Start date the first time an issue is opened. All logic lives
+# in the shared reusable workflow. `secrets: inherit` forwards a
+# PROJECTS_TOKEN secret if this repo has one; otherwise the reusable workflow
+# falls back to the self-hosted runner's baked-in $PROJECTS_TOKEN env
+# (GitHub Free orgs don't grant org secrets to private repos, so the runner
+# env is the default path — same pattern as NPM_TOKEN in build-image.yml).
+name: project-sync
+
+on:
+  issues:
+    types: [opened, labeled, unlabeled, reopened, edited]
+
+jobs:
+  sync:
+    uses: JMNZ-Technologies/shared/.github/workflows/project-sync.yml@main
+    with:
+      project_number: 1 # <-- replace with the number setup-project-board.sh prints
+    secrets: inherit
