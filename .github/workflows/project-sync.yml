@@ -16,6 +16,13 @@ on:
 
 jobs:
   sync:
+    # A reusable workflow can only hold permissions the calling job grants it —
+    # same rule that bit gate-merge-on-tests.yml (orchestrator#353). The callee
+    # declares `permissions: issues: read` and nothing else; without this block
+    # the caller passes the repo's restrictive default (no issues scope) and the
+    # run dies at startup on every issue event, fleet-wide (orchestrator#269).
+    permissions:
+      issues: read
     uses: JMNZ-Technologies/shared/.github/workflows/project-sync.yml@main
     with:
       project_number: 1 # <-- replace with the number setup-project-board.sh prints
