@@ -1,0 +1,41 @@
+name: Feature
+description: A new capability, for a product or for the platform
+type: Feature
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve
+      description: Describe the problem, not the solution. Who hits it, how often, and what they do today instead.
+    validations:
+      required: true
+  - type: textarea
+    id: prior-art
+    attributes:
+      label: Prior art — where have you seen this done well?
+      description: |
+        Name the products or tools that already do this, and say **what specifically works about
+        their version**. "Like Linear's command palette, because it is keyboard-first and never
+        blocks" is useful. "Like Linear" is not.
+        If there is no prior art, say so — that is worth knowing too.
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: What does done look like
+      description: The observable outcome. What can someone do afterwards that they cannot do now?
+    validations:
+      required: true
+  - type: textarea
+    id: not-doing
+    attributes:
+      label: What happens if we do not build it
+      description: The honest cost of saying no. If the answer is "not much", this probably belongs in the backlog rather than the next sprint.
+    validations:
+      required: true
+  - type: input
+    id: scope-guard
+    attributes:
+      label: Explicitly out of scope
+      description: What this issue is NOT, so it does not grow silently.
