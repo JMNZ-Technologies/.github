@@ -1,0 +1,50 @@
+name: Decision
+description: A choice that must be made before work can proceed
+type: Decision
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The deliverable here is **a decision**, not code. Set `Blocked by team` on the issue to
+        whoever must choose — that is what makes it findable and batchable.
+  - type: textarea
+    id: question
+    attributes:
+      label: The question
+      description: State it so it can be answered yes/no or A/B/C. If it cannot be stated that way, it is not ready to be a decision.
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: Options and trade-offs
+      description: |
+        One block per option: what it costs, what it buys, what it forecloses.
+        Include "do nothing" when it is genuinely available.
+      value: |
+        **(a)** …
+        - cost:
+        - buys:
+
+        **(b)** …
+        - cost:
+        - buys:
+    validations:
+      required: true
+  - type: textarea
+    id: blocked
+    attributes:
+      label: What is blocked by this
+      description: Link the issues that cannot move until this is answered. This is what turns a decision from interesting into urgent.
+    validations:
+      required: true
+  - type: textarea
+    id: recommendation
+    attributes:
+      label: Recommendation
+      description: If you have one, give it and say why. A decision with a recommendation gets made far faster than one without.
+  - type: input
+    id: deadline
+    attributes:
+      label: Decide by
+      description: A date, or what event forces the choice. Decisions without a deadline age indefinitely.
