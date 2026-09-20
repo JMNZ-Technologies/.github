@@ -1,0 +1,25 @@
+name: Documentation
+description: A doc is missing, wrong, or no longer true
+type: Documentation
+body:
+  - type: input
+    id: doc
+    attributes:
+      label: Which document
+      description: Path or URL.
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What is now false
+      description: |
+        Quote the line if you can. Docs that describe something that no longer exists are worse
+        than missing docs — they are believed. One described a label taxonomy months after it
+        was deleted, and nothing failed.
+    validations:
+      required: true
+  - type: textarea
+    id: truth
+    attributes:
+      label: What is actually true
