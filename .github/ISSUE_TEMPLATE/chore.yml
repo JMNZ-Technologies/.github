@@ -1,0 +1,21 @@
+name: Chore
+description: Maintenance, tooling, dependencies, infrastructure
+type: Chore
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What needs doing
+    validations:
+      required: true
+  - type: textarea
+    id: why-now
+    attributes:
+      label: Why now
+      description: Chores without a reason to be done now are how a backlog becomes noise. What changed, or what breaks if this waits?
+    validations:
+      required: true
+  - type: textarea
+    id: risk
+    attributes:
+      label: What breaks if this is skipped

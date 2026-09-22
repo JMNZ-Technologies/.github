@@ -1,0 +1,27 @@
+name: Refactor
+description: Internal restructuring with no behaviour change
+type: Refactor
+body:
+  - type: markdown
+    attributes:
+      value: "**Behaviour must not change.** If it does, this is a Feature or a Bug, not a refactor."
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is structurally wrong today
+    validations:
+      required: true
+  - type: input
+    id: adr
+    attributes:
+      label: Which ADR or guideline does this align to
+      description: A refactor without a standard to move toward tends to be taste. Link the ADR, or say none applies.
+    validations:
+      required: true
+  - type: textarea
+    id: proof
+    attributes:
+      label: How will we know behaviour did not change
+      description: Existing tests, a characterisation test, a contract test. Name them.
+    validations:
+      required: true

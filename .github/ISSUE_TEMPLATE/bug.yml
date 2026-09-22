@@ -1,0 +1,45 @@
+name: Bug
+description: Something is broken or behaves incorrectly
+type: Bug
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What is broken
+      description: What actually happens, and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: How to reproduce
+      description: Smallest set of steps, or the exact request/command. If it is intermittent, say how often.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Logs, a CI run link, a failing test name, a screenshot. Paste the error text rather than describing it.
+  - type: dropdown
+    id: blast
+    attributes:
+      label: Who is affected
+      options:
+        - One tenant / one user
+        - One product
+        - Several products
+        - The whole fleet
+        - Unknown
+    validations:
+      required: true
+  - type: textarea
+    id: noticed
+    attributes:
+      label: How would we have noticed this on our own?
+      description: |
+        If the honest answer is "we would not have", say so — that is a finding in itself and
+        usually means something needs a check, not just a fix. Several month-old failures were
+        found this way.
+    validations:
+      required: true

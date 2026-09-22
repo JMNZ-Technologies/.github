@@ -1,0 +1,28 @@
+name: Epic
+description: A multi-task initiative tracked by sub-issues
+type: Epic
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: The goal
+      description: One outcome. If it needs "and", it may be two epics.
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: What does done look like
+      description: How you will know the epic is finished, rather than just quiet.
+    validations:
+      required: true
+  - type: textarea
+    id: children
+    attributes:
+      label: Known sub-issues
+      description: Link them, or list what you expect them to be. Sub-issues are auto-added to the board; standalone issues are not.
+  - type: textarea
+    id: blocked-on
+    attributes:
+      label: What must land first
+      description: External dependencies, decisions, or other epics.
